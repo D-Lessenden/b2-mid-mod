@@ -22,6 +22,7 @@ RSpec.describe 'Flights' do
 
     it 'displays all fligh t numbers' do
       visit '/flights'
+
       expect(page).to have_content(@flight1.number)
       expect(page).to have_content(@flight2.number)
       expect(page).to have_content(@flight3.number)
