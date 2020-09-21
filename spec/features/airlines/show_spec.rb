@@ -23,7 +23,8 @@ RSpec.describe 'Airlines' do
 
     it 'has a show page that contains a uniqe list of all passengers that have used that airline' do
         visit "/airlines/#{@airline1.id}"
-        
+        save_and_open_page
+
 
         expect(page).to have_content(@passenger1.name)
         expect(page).to have_content(@passenger2.name)

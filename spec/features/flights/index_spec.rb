@@ -30,7 +30,6 @@ RSpec.describe 'Flights' do
 
     it 'displays all names of all passengers for every flight' do
       visit '/flights'
-
       expect(page).to have_content(@passenger1.name)
       expect(page).to have_content(@passenger2.name)
       expect(page).to have_content(@passenger3.name)
