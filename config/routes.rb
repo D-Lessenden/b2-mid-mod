@@ -4,4 +4,7 @@ Rails.application.routes.draw do
 
   get '/airlines/:id', to: 'airlines#show'
 
+  delete "/passengers/:id", to: "passengers#destroy"
+
+
 end

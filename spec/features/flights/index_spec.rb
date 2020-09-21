@@ -34,8 +34,21 @@ RSpec.describe 'Flights' do
       expect(page).to have_content(@passenger2.name)
       expect(page).to have_content(@passenger3.name)
       expect(page).to have_content(@passenger4.name)
-
-
     end
+
+    it 'has a link to remove passengers' do
+      visit '/flights'
+      expect(page).to have_link('Remove Passenger')
+      click_link('Remove Passenger', match: :first)
+      expect(current_path).to eq("/flights")
+      expect(page).to_not have_content(@passenger1.name)
+      expect(page).to have_content(@passenger2.name)
+      expect(page).to have_content(@passenger3.name)
+      expect(page).to have_content(@passenger4.name)
+
+
+      # click_on('Remove Passenger').first
+    end
+
   end
 end

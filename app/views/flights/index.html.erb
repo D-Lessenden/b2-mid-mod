@@ -1,6 +1,6 @@
 <%@flights.each do |flight| %>
   <%= flight.number %>
   <%flight.passengers.each do |passenger| %>
-    <%= passenger.name %>
+<p><%= passenger.name %> <%= link_to "Remove Passenger", "/passengers/#{passenger.id}", method: :delete %></p>
     <% end %>
 <% end %>
